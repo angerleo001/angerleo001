@@ -159,6 +159,16 @@ body {
   display: inline-block;
 }
 
+.arrow-gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.1) 10%,
+    rgba(255, 255, 255, 0.000025) 50%,
+    rgba(255, 255, 255, 0.000025) 50%,
+    rgba(255, 255, 255, 0.025) 100%
+  );
+}
+
 @keyframes wave-animation {
   0% {
     transform: rotate(0deg);
@@ -178,17 +188,10 @@ body {
   60% {
     transform: rotate(10deg);
   }
+  70% {
+    transform: rotate(0deg);
+  }
   100% {
     transform: rotate(0deg);
   }
-}
-
-.arrow-gradient {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.1) 10%,
-    rgba(255, 255, 255, 0.000025) 50%,
-    rgba(255, 255, 255, 0.000025) 50%,
-    rgba(255, 255, 255, 0.025) 100%
-  );
 }

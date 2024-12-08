@@ -1,15 +1,10 @@
 import { useState } from 'react';
-import { navLinks, NavLink } from '../constants/index';
 
-// Define props for NavItems
-interface NavItemsProps {
-  onClick?: () => void;
-}
+import { navLinks } from '../constants/index.js';
 
-// NavItems Component
-const NavItems: React.FC<NavItemsProps> = ({ onClick = () => {} }) => (
+const NavItems = ({ onClick = () => {} }) => (
   <ul className="nav-ul">
-    {navLinks.map((item: NavLink) => (
+    {navLinks.map((item) => (
       <li key={item.id} className="nav-li">
         <a href={item.href} className="nav-li_a" onClick={onClick}>
           {item.name}
@@ -19,9 +14,8 @@ const NavItems: React.FC<NavItemsProps> = ({ onClick = () => {} }) => (
   </ul>
 );
 
-// Navbar Component
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
